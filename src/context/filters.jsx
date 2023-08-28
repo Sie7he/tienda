@@ -6,7 +6,7 @@ export const FiltersProvider = ({ children }) => {
 
     const [filters, setFilters] = useState({
         category: 'all',
-        minPrice: 700
+        minPrice: 0
     })
 
   return (

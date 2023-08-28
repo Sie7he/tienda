@@ -5,19 +5,17 @@ import useFilters from './components/hooks/useFilters'
 import { Cart } from './components/shareds/Cart'
 import { CartProvider } from './context/cart'
 import { Footer } from './components/shareds/Footer'
+import { AppRouter } from './router/AppRouter'
 
 
 function App() {
-
-  const { filterProducts } = useFilters()
-  const filteredProducts = filterProducts(initialProducts)
 
   return (
     <>
       <CartProvider>
         <Header />
         <Cart />
-        <Products products={filteredProducts} />
+        <AppRouter />
         <Footer />
       </CartProvider>
     </>
