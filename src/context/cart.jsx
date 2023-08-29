@@ -67,7 +67,8 @@ export function CartProvider({ children }) {
     })
 
     const clearCart = () => dispatch({
-        type: 'CLEAR_CART'
+        type: 'CLEAR_CART',
+        payload: []
     });
 
 

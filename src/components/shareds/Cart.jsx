@@ -6,14 +6,21 @@ import { useCart } from '../hooks/useCart';
 
 
 
-function CartItem({ thumbnail, price, title, quantity, addToCart, reduceFromCart }) {
+function CartItem({ thumbnail, price, title, quantity, addToCart, reduceFromCart, removeFromCart }) {
 
   return (
     <li>
+      <div className='flex flex-col text-center text-sm'>
+
     <img src={thumbnail}
       alt={title}
-    />
-    <div className='flex flex-col justify-around p-4'>
+      />
+         <span className='text-red-400 cursor-pointer'
+          onClick={removeFromCart}
+         >Delete</span>
+   
+      </div>
+  <div className='flex flex-col justify-around p-4'>
       <strong>
         {title}
       </strong>
@@ -28,8 +35,10 @@ function CartItem({ thumbnail, price, title, quantity, addToCart, reduceFromCart
   <span className="quantity-value">{quantity}</span>
   <button className="quantity-increase border-l-2" onClick={addToCart} >+</button>
 </div>
+
 </div>
     </div>
+   
   </li>    
   )
 
@@ -71,6 +80,7 @@ export const Cart = () => {
             <CartItem key={product.id} 
             addToCart={() => addToCart(product)} 
             reduceFromCart={() => reduceFromCart(product)}
+            removeFromCart={() => removeFromCart(product)}
             {...product}/>
             
           ))}
@@ -80,8 +90,11 @@ export const Cart = () => {
          <span className='text-end font-bold'>
          ${total.toLocaleString().replace(',', '.')}
          </span>
-
-        </div>
+         </div>
+            <button className='bg-red-500 text-white w-full h-10 rounded-lg mt-4'
+                  onClick={() => clearCart()}
+            >Clear Cart</button>
+       
       </aside>
     </>
   )

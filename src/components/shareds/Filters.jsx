@@ -56,10 +56,11 @@ export const Filters = () => {
                         
                     />
                      
-                <input 
+                     <input 
                     type="text" 
                     className="p-3 block w-16 border border-gray-400 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500  dark:text-gray-400"
                     value={filters.minPrice}
+                    disabled
                 />
             </div>
         </div>
