@@ -6,9 +6,9 @@ export const Header = () => {
 
 
   return (
-    <header className='bg-gradient-to-r from-slate-500 to-slate-300 w-full mb-4 p-4'>
-    <h1 className='text-center text-4xl text-yellow-50'>React Shop</h1>
-    <Filters />
+    <header className='flex items-center bg-gradient-to-r from-slate-500 to-slate-300 h-7 w-full p-4'>
+    <span className='text-center text-xs text-yellow-50'>Just a decoration bg</span>
+   
     </header>
   )
 }
